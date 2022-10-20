@@ -1,0 +1,54 @@
+<meta charset="utf-8">
+<html>
+
+<head>
+  <style>
+    #chel {
+      position: absolute;
+      left: 50px;
+      top: 50px;
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button class="left">&laquo;</button>
+  <button class="right">&raquo;</button>
+  <button class="up">up</button>
+  <button class="down">down</button>
+
+  <img id="chel" src="/lab2/chel.png">
+
+  <script type="text/javascript" src="/jquery.js"></script>
+
+  <script type="text/javascript">
+
+  $(".left").click(function(){
+    $("#chel").animate({left: "-=100"}, "slow")
+    return false;
+  });
+
+  $(".right").click(function(){
+    $("#chel").animate({left: "+=100"}, "slow")
+    return false;
+  });
+
+  $(".up").click(function(){
+    $("#chel").animate({top: "-=100"}, "slow")
+    return false;
+  });
+
+  $(".down").click(function(){
+    $("#chel").animate({top: "+=100"}, "slow")
+    return false;
+  });
+
+  </script>
+
+</body>
+
+</html>

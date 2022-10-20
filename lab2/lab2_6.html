@@ -1,0 +1,254 @@
+<meta charset="utf-8">
+<html>
+ <head>
+    <script type="text/javascript" src="/jquery.js"></script>
+ </head>
+ <body>
+ <fieldset>
+ <legend> Общий опрос </legend>
+ <fieldset class="q1">
+ <legend> Вы часто пьете молоко? </legend>
+ <input type="radio" id="q1a1" class="com"
+     name="q1">
+    <label for="q1a1">Да</label>
+
+    <input type="radio" id="q1a2" class="com"
+     name="q1">
+    <label for="q1a2">Нет</label>
+</fieldset>
+
+<fieldset class="q2">
+<legend> Вы каждый день кушаете хлеб? </legend>
+<input type="radio" id="q2a1" class="com"
+    name="q2">
+   <label for="q2a1">Да</label>
+
+   <input type="radio" id="q2a2" class="com"
+    name="q2">
+   <label for="q2a2">Нет</label>
+</fieldset>
+
+<fieldset class="q3">
+<legend> Знаете ли вы, что Эйфелева башня построена в Париже (Франция)? </legend>
+<input type="radio" id="q3a1" class="com"
+    name="q3">
+   <label for="q3a1">Да</label>
+
+   <input type="radio" id="q3a2" class="com"
+    name="q3">
+   <label for="q3a2">Нет</label>
+</fieldset>
+
+<fieldset class="q4">
+<legend> Вы любите шоколад? </legend>
+<input type="radio" id="q4a1" class="com"
+    name="q4">
+   <label for="q4a1">Да</label>
+
+   <input type="radio" id="q4a2" class="com"
+    name="q4">
+   <label for="q4a2">Нет</label>
+</fieldset>
+
+<fieldset class="q5">
+<legend> Правда ли, что у белых медведей черная кожа? </legend>
+<input type="radio" id="q5a1" class="com"
+   name="q5">
+  <label for="q5a1">Да</label>
+
+  <input type="radio" id="q5a2" class="com"
+   name="q5">
+  <label for="q5a2">Нет</label>
+</fieldset>
+
+<fieldset class="q6">
+<legend> Часто ли занимаетесь спортом? </legend>
+<input type="radio" id="q6a1" class="com"
+   name="q6">
+  <label for="q6a1">Да</label>
+
+  <input type="radio" id="q6a2" class="com"
+   name="q6">
+  <label for="q6a2">Нет</label>
+</fieldset>
+
+  <center><button id='finish'> 	Закончить/Новый опрос</button>  </center>
+  </fieldset>
+
+  <fieldset >
+  <legend> Вывод </legend>
+
+  <fieldset>
+   <legend> Вы часто пьете молоко? </legend>
+  <p id="q1a1o">?</p>
+  <p id="q1a2o">?</p>
+   </fieldset>
+
+   <fieldset>
+   <legend> Вы каждый день кушаете хлеб? </legend>
+  <p id="q2a1o">?</p>
+  <p id="q2a2o">?</p>
+   </fieldset>
+
+   <fieldset>
+   <legend> Знаете ли вы, что Эйфелева башня построена в Париже (Франция)? </legend>
+  <p id="q3a1o">?</p>
+  <p id="q3a2o">?</p>
+   </fieldset>
+
+   <fieldset>
+    <legend> Вы любите шоколад? </legend>
+   <p id="q4a1o">?</p>
+   <p id="q4a2o">?</p>
+    </fieldset>
+
+    <fieldset>
+    <legend> Правда ли, что у белых медведей черная кожа? </legend>
+   <p id="q5a1o">?</p>
+   <p id="q5a2o">?</p>
+    </fieldset>
+
+    <fieldset>
+    <legend> Часто ли занимаетесь спортом? </legend>
+   <p id="q6a1o">?</p>
+   <p id="q6a2o">?</p>
+    </fieldset>
+
+    <p id="user">?</p>
+
+   </fieldset>
+
+ <script type="text/javascript">
+
+$(document).ready(function(){
+$('#finish').prop('disabled',true);
+
+
+let i=0;
+let users=0;
+
+let q1a1=0;
+let q1a2=0;
+
+let q2a1=0;
+let q2a2=0;
+
+let q3a1=0;
+let q3a2=0;
+
+let q4a1=0;
+let q4a2=0;
+
+let q5a1=0;
+let q5a2=0;
+
+let q6a1=0;
+let q6a2=0;
+
+$('#q1a1').change(function() {
+q1a1++;
+   $('.q1').attr('disabled', true);
+});
+$('#q1a2').change(function() {
+q1a2++;
+   $('.q1').attr('disabled', true);
+});
+
+$('#q2a1').change(function() {
+q2a1++;
+   $('.q2').attr('disabled', true);
+});
+$('#q2a2').change(function() {
+q2a2++;
+   $('.q2').attr('disabled', true);
+});
+
+$('#q3a1').change(function() {
+q3a1++;
+   $('.q3').attr('disabled', true);
+});
+$('#q3a2').change(function() {
+q3a2++;
+   $('.q3').attr('disabled', true);
+});
+
+$('#q4a1').change(function() {
+q4a1++;
+   $('.q4').attr('disabled', true);
+});
+$('#q4a2').change(function() {
+q4a2++;
+   $('.q4').attr('disabled', true);
+});
+
+$('#q5a1').change(function() {
+q5a1++;
+   $('.q5').attr('disabled', true);
+});
+$('#q5a5').change(function() {
+q5a2++;
+   $('.q5').attr('disabled', true);
+});
+
+$('#q6a1').change(function() {
+q6a1++;
+   $('.q6').attr('disabled', true);
+});
+$('#q6a2').change(function() {
+q3a2++;
+   $('.q6').attr('disabled', true);
+});
+
+$('.com').change(function() {
+
+i++;
+
+if (i==6){
+$('#finish').prop('disabled',false);
+}else{
+$('#finish').prop('disabled',true);
+}
+});
+
+
+$('#finish').on('click', function(){
+users++;
+i=0;
+$('#finish').prop('disabled',true);
+$('.com').prop('checked',false);
+$('.q1').attr('disabled', false);
+$('.q2').attr('disabled', false);
+$('.q3').attr('disabled', false);
+$('.q4').attr('disabled', false);
+$('.q5').attr('disabled', false);
+$('.q6').attr('disabled', false);
+
+$("#q1a1o").text("Да: " + q1a1/users*100 + "%");
+$("#q1a2o").text("Нет: " + q1a2/users*100 + "%");
+
+$("#q2a1o").text("Да: " + q2a1/users*100 + "%");
+$("#q2a2o").text("Нет: " + q2a2/users*100 + "%");
+
+$("#q3a1o").text("Да: " + q3a1/users*100 + "%");
+$("#q3a2o").text("Нет: " + q3a2/users*100 + "%");
+
+$("#q4a1o").text("Да: " + q4a1/users*100 + "%");
+$("#q4a2o").text("Нет: " + q4a2/users*100 + "%");
+
+$("#q5a1o").text("Да: " + q5a1/users*100 + "%");
+$("#q5a2o").text("Нет: " + q5a2/users*100 + "%");
+
+$("#q6a1o").text("Да: " + q6a1/users*100 + "%");
+$("#q6a2o").text("Нет: " + q6a2/users*100 + "%");
+
+
+$("#user").text("Пользователей: " + users );
+ });
+ });
+ </script>
+
+
+
+
+ </body>
+</html>

@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<html>
+<head>
+  <style>
+   .coords {
+       width: 180px; /* ширина */
+       border: 10px solid plum; /* толщина и цвет сплошной рамки */
+       margin: 10px auto; /* отступ сверху и горизонтальное выравнивание по центру */
+          padding: 10px; /* поля вокруг, чтобы текст не прилипал к рамке */
+         font-size: 30px; /* размер шрифта */
+       font-weight: 700; /* жирность шрифта */
+       font-family: 'Arial Narrow Bold', sans-serif; /* семейство шрифтов */
+   }
+  </style>
+  <script>
+    document.addEventListener("mousemove",
+  (event)=>{
+    document.querySelector('.x').innerHTML = event.clientX;
+    document.querySelector('.y').innerHTML = event.clientY;
+  });
+  </script>
+</head>
+<body>
+  <div class="coords">
+     X: <span class="x"></span><br>
+     Y: <span class="y"></span>
+  </div>
+
+
+
+</body>
+</html>

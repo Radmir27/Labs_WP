@@ -1,0 +1,84 @@
+<meta charset="utf-8">
+<html>
+<head>
+<title>Сообщение</title>
+
+<style>
+.error {
+border: 1px solid red;
+}
+
+.input.norm {
+border: 1px solid green;
+}
+</style>
+
+<script language="JavaScript">
+
+function doSend()
+{
+var ift = true;
+
+document.user.name.className = "";
+document.user.pass.className = "";
+document.user.passt.className = "";
+document.user.email.className = "";
+document.user.mass.className = "";
+
+var v=document.user.email.value.indexOf("@",1);
+if(document.user.name.value=="")
+{
+ift = false;
+alert('Вы должны заполнить поле «Ваше имя»');
+document.user.name.className = "error";
+}
+if(document.user.pass.value.length <= 4)
+{
+ift = false;
+alert('В поле «Пароль» должно быть больше 4-х символов');
+document.user.pass.className = "error";
+}
+if(document.user.pass.value != document.user.passt.value)
+{
+ift = false;
+alert('Пароли в полях не совпадают');
+document.user.passt.className = "error";
+}
+if(v==-1)
+{
+ift = false;
+alert('Email указан неверно');
+document.user.email.className = "error";
+}
+if(document.user.mass.value.length <= 10)
+{
+ift = false;
+alert('В поле «Сообщение» должно быть больше 10 символов');
+document.user.mass.className = "error";
+}
+if (ift) document.user.submit();
+}
+</script>
+</head>
+<body>
+<p align="center"><font size=6>Отправить сообщение</font>
+<form name="user">
+<br> Ваше имя:
+<input type="text" name="name" size="30">
+<br> Пароль:
+<input type="password" name="pass" size="32">
+<br> Подтверждение пароля:
+<input type="password" name="passt" size="32">
+<br> Email:
+<input type="text" name="email" size="32">
+<br> Тема сообщения:
+<input type="text" name="tmass" size="50">
+<br> Сообщение:
+<input type="text" name="mass" size="100">
+<br>
+<input type="button" value="Отправить" onClick="doSend()">
+<input type="reset" value="Очистить">
+</form>
+</p>
+</body>
+</html>
