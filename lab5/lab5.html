@@ -1,0 +1,81 @@
+﻿
+<html>
+<head>
+<meta charset="UTF-8">
+<title>
+LR5
+</title>
+<style>
+p{
+	text-shadow: 0.7px 0.7px 0 black, -0.7px -0.7px 0 black, 0.7px -0.7px 0 black, -0.7px 0.7px 0 black;
+	font-size:23;
+	color: #87CEEB;
+	
+}
+label{
+	text-shadow: 0.7px 0.7px 0 black, -0.7px -0.7px 0 black, 0.7px -0.7px 0 black, -0.7px 0.7px 0 black;
+	font-size:23;
+	color: #87CEEB;
+}
+td{
+	border: solid 4px #BDB76B;
+	background: #000000;
+}
+  *, *::before, *after{
+  padding:0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  }
+  .morphing{
+  position: relative;
+   font-size:20px;
+    background-color :#fff;
+    color:#000;
+    min-height: 10vh;
+    filter: contrast(25) blur(0,5px);
+  }
+  .word{
+  position: absolute;
+  top:50%
+  left:50%
+  transform: translate(-50%,-50%);
+  animation: word 16s infinite ease-in-out;
+  }
+  .word:nth-child(1){
+  animation-delay: -16s;
+  }
+  .word:nth-child(2){
+  animation-delay: -14s;
+  }
+  .word:nth-child(3){
+  animation-delay: -12s;
+  }
+  @keyframes word{
+    0%,5%,100%{
+    filter:blur(0px);
+      opacity:1;
+    }
+    20%,80%{
+      filter:blur(1em);
+      opacity:0;
+    }
+  }
+  </style>
+</head>
+<body>
+<div class="morphing">
+<div class="word">Выполнил </div>
+<div class="word">студент группы ПИ-421 </div>
+<div class="word">Абкаримов Радмир</div>
+</div>
+<div id="game" align="center" >
+</div>
+<script src="jquery-3.6.0.min.js"></script>
+<script src="jquery.game.js"></script>
+<script>
+$(function (){
+ $('div').game();
+}); 
+</script>
+</body>
+</html>
