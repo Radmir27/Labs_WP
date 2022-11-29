@@ -1,0 +1,58 @@
+﻿<html>
+<head>
+<meta charset="UTF-8">
+<title>Абкаримов Р.М.</title>
+	<link rel="stylesheet" type="text/css" href="Lab3.css">
+</head>
+<body>
+<h2>Мы рады услышать Ваши комментарии</h2>
+<div class="blok2">
+<form name="form">
+<label for="fname">Имя:</label>
+<input type="text" name="name" placeholder="Ваше имя...">
+<label for="lname">Почта:</label>
+<input type="text" name="email" placeholder="Ваша почта..">
+<label for="lname">Комментарий:</label>
+<input type="text" name="message" placeholder="Ваш комментарий..">
+<input type="submit" value="Отправить комментарий" onclick="set_data();">
+</form>
+<section id="message"></section>
+</div>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
+<script language="JavaScript">
+        get_data();
+        function set_data() {
+            var name = document.form.name.value;
+            var email = document.form.email.value;
+            var message = document.form.message.value;
+            if (length(name)==0 || length(email)==0 || length(message)==0){
+                alert("Остались пустые поля!");
+return;
+}
+            $.ajax({
+                type: "GET",
+                url: "setData_3.2.php?name=" + name + "&email=" + email + "&message=" + message,
+                dataType: "html",
+                success: function(data){
+                    alert("Комментарий успешно отправлен!");
+get_comments();
+}
+            });
+        }
+        function get_data() {
+            $.ajax({
+                type: "GET",
+                url: "getData_3.2.php",
+                dataType: "html",
+                success: function(data){document.getElementById("message").innerHTML = data;}
+            });
+        }
+        function length(str){
+            var strIter = str[Symbol.iterator]();
+            let str_lenght = 0;
+            for (let ch of strIter){str_lenght++;}
+            return str_lenght;
+        }
+</script>
+</body>
+</html>

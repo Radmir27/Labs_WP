@@ -1,0 +1,30 @@
+﻿<html>
+<head>
+<meta charset="UTF-8">
+<title>Абкаримов Р.М.</title>
+	<link rel="stylesheet" type="text/css" href="Lab3.css">
+</head>
+<body>
+<section id="news"></section>
+<input type="submit" value="Показать еще" onclick="upload();" class="button">
+<script language="JavaScript" src="jquery-3.6.0.js"></script>
+<script language="JavaScript">
+            var g = 0;
+            var need_to_get = 1;
+
+            $(document).ready(upload());
+
+            function upload() {
+                g += need_to_get;
+                $.ajax({
+                    type: "GET",
+                    url: "getData_3.1.php?g=" + g + "&need_to_get=" + need_to_get,
+                    dataType: "html",
+                    success: function(data){
+                        document.getElementById("news").innerHTML += data;
+}
+                });
+            }
+</script>
+</body>
+</html>
